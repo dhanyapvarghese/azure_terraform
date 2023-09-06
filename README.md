@@ -5,9 +5,9 @@ Creating the AKS cluster infrastructure using Terraform
 2 Created the virtual networks ,subnet,public ip, and application gateway <br />
    - Use the azurerm_virtual_network Terraform resource to create a VNET.
    - Use the azurerm_subnet Terraform resource to create relevant subnets.
-3.Created ACR and roles assignments.
+3.Created ACR and roles assignments. <br />
     - Use the azurerm_container_registry Terraform resource to create a new ACR.
-4.Created the AKS cluster and IAM role for the deployment.
+4.Created the AKS cluster and IAM role for the deployment. <br />
   - Use the azurerm_kubernetes_cluster Terraform resource to AKS Cluster
   - Use the azurerm_role_assignment Terraform resource to create the two neccessary role assignments
 ### Run the Terraform codes for creating the infrastructure.
