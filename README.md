@@ -1,8 +1,8 @@
 ## azure_terraform
 Creating the AKS cluster infrastructure using Terraform
 ### Steps
-1.Created Resource group and storag account for storing the backend terraform statefiles
-2 Created the virtual networks ,subnet,public ip, and application gateway
+1.Created Resource group and storag account for storing the backend terraform statefiles <br />
+2 Created the virtual networks ,subnet,public ip, and application gateway <br />
    - Use the azurerm_virtual_network Terraform resource to create a VNET.
    - Use the azurerm_subnet Terraform resource to create relevant subnets.
 3.Created ACR and roles assignments.
