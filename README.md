@@ -11,10 +11,10 @@ Creating the AKS cluster infrastructure using Terraform
   - Use the azurerm_kubernetes_cluster Terraform resource to AKS Cluster
   - Use the azurerm_role_assignment Terraform resource to create the two neccessary role assignments
 ### Run the Terraform codes for creating the infrastructure.
-Create the cluster by running the following:
-terraform init - To initialize the working directory and pull down the provider
-terraform plan - To go through a "check" and confirm the configurations are valid
-terraform apply - To create the resource
+Create the cluster by running the following: <br />
+terraform init - To initialize the working directory and pull down the provider <br />
+terraform plan - To go through a "check" and confirm the configurations are valid <br />
+terraform apply - To create the resource <br />
 
 
 
