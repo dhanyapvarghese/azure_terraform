@@ -20,6 +20,12 @@ resource "azurerm_kubernetes_cluster" "testcn" {
   network_profile {
     load_balancer_sku = "standard"
     network_plugin    = "azure"
+    network_policy     = "azure"
+    service_cidr       = "10.0.0.0/16"
+    dns_service_ip     = "10.0.0.10"
+    docker_bridge_cidr = "172.17.0.1/16"
+    # Specifies the SKU of the Load Balancer used for this Kubernetes Cluster. Use standard for when enable agent_pools    availability_zones.
+    
   }
 
 
@@ -39,5 +45,23 @@ resource "azurerm_role_assignment" "node_infrastructure_update_scale_set" {
   depends_on = [
     azurerm_kubernetes_cluster.testcn
   ]
+}
+
+resource "kubernetes_namespace" "nginx_ingress" {
+  metadata {
+    name        = "test"
+    annotations = {}
+    labels      = {}
+  }
+}
+resource "helm_release" "nginx_ingress" {
+  name       = "nginx-ingress-controller"
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "nginx-ingress-controller"
+  namespace  = "test"
+  set {
+    name  = "service.type"
+    value = "ClusterIP"
+  }
 }
 
