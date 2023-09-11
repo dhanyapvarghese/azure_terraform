@@ -18,7 +18,7 @@ resource "azurerm_subnet" "app_gwsubnet" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "myAGPublicIPAddress"
+  name                = "public_ip"
   resource_group_name = "test_rg"
   location            = "West Europe"
   allocation_method   = "Static"
@@ -37,7 +37,7 @@ locals {
 }
 
 resource "azurerm_application_gateway" "network" {
-  name                = "example-appgateway"
+  name                = "appgw"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
 
