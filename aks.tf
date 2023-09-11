@@ -46,22 +46,3 @@ resource "azurerm_role_assignment" "node_infrastructure_update_scale_set" {
     azurerm_kubernetes_cluster.testcn
   ]
 }
-
-resource "kubernetes_namespace" "nginx_ingress" {
-  metadata {
-    name        = "test"
-    annotations = {}
-    labels      = {}
-  }
-}
-resource "helm_release" "nginx_ingress" {
-  name       = "nginx-ingress-controller"
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "nginx-ingress-controller"
-  namespace  = "test"
-  set {
-    name  = "service.type"
-    value = "ClusterIP"
-  }
-}
-
